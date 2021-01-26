@@ -1,0 +1,7 @@
+{
+    "/Users/*":{
+        "target": "https://apieuro-v1.herokuapp.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
