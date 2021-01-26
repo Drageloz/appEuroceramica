@@ -1,13 +1,15 @@
-const { RequiredValidator } = require("@angular/forms");
-
 const express = require('express');
 
 const app = express();
 
-app.use(express.static('./views'));
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, '/dist/views')));
 
 app.get('/*', (req,res) =>
-    res.sendFile('index.html', {root: './src/'}),
+    res.sendFile(__dirname + '/dist/views/index.html'),
 );
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, function(){
+    console.log('App started');
+});
