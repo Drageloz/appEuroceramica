@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="login">
+    <form class="login_form" method="post">
+      <div class="login_form--textLogin">Información de cuenta</div>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Email"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Contraseña"
+        required="required"
+      />
+      <button type="submit" (click)="login()">
+        <div>
+          Ingresar
+        </div>
+      </button>
+    </form>
+  </div>
+  
