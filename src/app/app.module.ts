@@ -8,14 +8,18 @@ import { HttpClientModule } from "@angular/common/http";
 import { CookieService } from "ngx-cookie-service";
 import { AppRoutingModule } from "./app-routing.module";
 import { HeaderComponent } from './header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutComponent } from './layout/layout.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    LayoutComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
