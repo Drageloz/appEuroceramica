@@ -6,7 +6,7 @@ import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {
-    path: "", 
+    path: "euro", 
     component: LayoutComponent,
     children: [
       {
@@ -14,10 +14,15 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
         canActivate: [AuthServiceGuard]
       },
-      {path: "login", component: LoginComponent},
+      {
+        path: "users",
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+        canActivate: [AuthServiceGuard]
+      },
       {path: "**", redirectTo:"home"}
     ]
   },
+  {path: "login", component: LoginComponent}
   
 ];
 

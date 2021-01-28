@@ -10,6 +10,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout/layout.component';
+import { MenuComponent } from './menu/menu.component';
+import { MaterialModule } from "./material/material.module";
 
 
 @NgModule({
@@ -18,8 +20,9 @@ import { LayoutComponent } from './layout/layout.component';
     LoginComponent,
     HeaderComponent,
     LayoutComponent,
+    MenuComponent
   ],
-  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [MaterialModule, AppRoutingModule, BrowserModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })

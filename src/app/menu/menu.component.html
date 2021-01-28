@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="container_slidebar">
+        <button mat-icon-button [matMenuTriggerFor]="animals" aria-label="Example icon-button with a menu">
+            <mat-icon>visibility</mat-icon>
+        </button>
+        <mat-menu #animals="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="vertebrates">Configuración</button>
+        <button mat-menu-item [matMenuTriggerFor]="invertebrates">Contadores Actuales</button>
+        <button mat-menu-item [matMenuTriggerFor]="historicos">Contadores Historicos</button>
+        <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+        </mat-menu>
+
+        <mat-menu #vertebrates="matMenu">
+        <button mat-menu-item routerLink="/euro/users/users" >Usuarios</button>
+        <button mat-menu-item >Contadores</button>
+        <button mat-menu-item >Valor mínimo de duración de señal por contador</button>
+        </mat-menu>
+
+        <mat-menu #invertebrates="matMenu">
+        <button mat-menu-item>Proceso1</button>
+        <button mat-menu-item>Proceso2</button>
+        <button mat-menu-item>Proceso3</button>
+        <button mat-menu-item>Proceso4</button>
+        </mat-menu>
+
+        <mat-menu #historicos="matMenu">
+            <button mat-menu-item>Cambio de Producto</button>
+            <button mat-menu-item>Fin de Turno</button>
+        </mat-menu>
+    </div>
+</div>

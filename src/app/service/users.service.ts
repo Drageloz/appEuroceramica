@@ -15,5 +15,9 @@ export class UsersService {
   async login(name:string): Promise<User>{
     return await this.http.get<User>(this.apiUrl + name).toPromise();
   }
+
+  async users(): Promise<User[]>{
+    return await this.http.get<User[]>(this.apiUrl + "all").toPromise();
+  }
   
 }
