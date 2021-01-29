@@ -6,6 +6,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import {MatSortModule} from '@angular/material/sort';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -16,7 +19,11 @@ import {MatSortModule} from '@angular/material/sort';
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule
+    
   ],
   exports:[
     MatMenuModule,
@@ -24,7 +31,10 @@ import {MatSortModule} from '@angular/material/sort';
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }

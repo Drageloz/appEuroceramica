@@ -1,7 +1,73 @@
-<div class="process">
-    <div class="process_identifier">
-        
+<div style="text-align:center;">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date">
+        <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+</div>
+
+<div class="process" style="margin-left: 35%;">
+     
+    <div style="display: flex; width: 50%;">
+    <mat-card style="background-color: #4682B4; color: cornsilk;">Actual</mat-card>
+    <mat-card style="background-color: #4682B4; color: cornsilk;">Fin de turno</mat-card>
     </div>
 
+</div>
+
+<div class="process">
+    <div style="margin-left: 25%;">Texto descriptivo</div>
+    <div class="process_checker">
+        <div class="process_checker--active"></div>
+    </div>
+     
+    <div style="display: flex; width: 50%;">
+    <mat-card>12345</mat-card>
+    <mat-card>12345</mat-card>
+    </div>
+
+</div>
+
+<div class="process">
+    <div style="margin-left: 25%;">Texto descriptivo</div>
+    <div class="process_checker">
+        <div class="process_checker--active"></div>
+    </div>
+     
+    <div style="display: flex; width: 50%;">
+    <mat-card>12345</mat-card>
+    <mat-card>12345</mat-card>
+    </div>
+
+</div>
+
+<div class="process">
+    <div style="margin-left: 25%;">Texto descriptivo</div>
+    <div class="process_checker">
+        <div class="process_checker--active"></div>
+    </div>
+     
+    <div style="display: flex; width: 50%;">
+    <mat-card>12345</mat-card>
+    <mat-card>12345</mat-card>
+    </div>
+
+</div>
+
+<div class="process">
+    <div style="margin-left: 25%;">Texto descriptivo</div>
+    <div class="process_checker">
+        <div class="process_checker--active" style="background-color: green;"></div>
+    </div>
+     
+    <div style="display: flex; width: 50%;">
+    <mat-card>12345</mat-card>
+    <mat-card>12345</mat-card>
+    </div>
 
 </div>

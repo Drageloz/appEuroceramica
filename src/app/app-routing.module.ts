@@ -14,11 +14,6 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
         canActivate: [AuthServiceGuard]
       },
-      {
-        path: "users",
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-        canActivate: [AuthServiceGuard]
-      },
       {path: "**", redirectTo:"home"}
     ]
   },
