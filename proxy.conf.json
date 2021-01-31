@@ -1,7 +1,8 @@
 {
-    "/Users/*":{
+    "/apiEuroceramica/api/*":{
         "target": "https://apieuro-v1.herokuapp.com",
         "secure": false,
+        "logLevel": "debug",
         "changeOrigin": true
     }
 }

@@ -9,15 +9,15 @@ import { User } from "../interface/user"
   providedIn: "root"
 })
 export class UsersService {
-  private apiUrl:string = "/Users/";
+  private apiUrl:string = "/apiEuroceramica/api";
   constructor(private http: HttpClient, private cookies: CookieService) {}
 
   async login(name:string): Promise<User>{
-    return await this.http.get<User>(this.apiUrl + name).toPromise();
+    return await this.http.get<User>(this.apiUrl + "/Users/" + name).toPromise();
   }
 
   async users(): Promise<User[]>{
-    return await this.http.get<User[]>(this.apiUrl + "all").toPromise();
+    return await this.http.get<User[]>(this.apiUrl + "/Users/" + "all").toPromise();
   }
   
 }
