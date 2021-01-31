@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import {OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
@@ -9,12 +9,12 @@ import { ApiService } from 'src/app/service/api.service';
 @Component({
   selector: 'app-counters',
   templateUrl: './counters.component.html',
-  styleUrls: ['./counters.component.sass']
+  styleUrls: ['./counters.component.sass','../../../app.component.sass']
 })
-export class CountersComponent implements OnInit {
+export class CountersComponent implements AfterViewInit {
 
   
-  displayedColumns: string[] = ['Id', 'Nombre Contador', 'Nombre Corto', 'Nombre Proceso', 'Tope'];
+  displayedColumns: string[] = ['coId', 'nameCounter', 'shortName', 'processName', 'limit'];
   dataSource!:MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,15 +23,11 @@ export class CountersComponent implements OnInit {
   constructor(public apiService: ApiService) {
     this.dataTable();
   }
-
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngAfterViewInit(): void {
   }
   
 
   async dataTable(){
-    // Create 100 users
     await this.apiService.counters().then(result =>
         {
           console.log(result);

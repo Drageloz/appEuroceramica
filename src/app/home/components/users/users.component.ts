@@ -28,7 +28,6 @@ export class UsersComponent implements AfterViewInit {
   }
 
   async dataTable(){
-    // Create 100 users
     await this.apiService.users().then(result =>
         {
           console.log(result);
