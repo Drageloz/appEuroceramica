@@ -1,31 +1,45 @@
 <div class="container">
     <div class="container_slidebar">
-        <button mat-icon-button [matMenuTriggerFor]="animals" aria-label="Example icon-button with a menu">
-            <mat-icon>visibility</mat-icon>
+        <img src="../../assets/img/euroceramica.png" class="container_slidebar--img">
+        <button #conf id ="conf" (click)="active(conf, conf_submenu)" class="container_slidebar_menu container_slidebar--conf">
+            <mat-icon>manage_accounts</mat-icon>
+            <div>Configuración</div>
         </button>
-        <mat-menu #animals="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="vertebrates">Configuración</button>
-        <button mat-menu-item [matMenuTriggerFor]="invertebrates">Contadores Actuales</button>
-        <button mat-menu-item [matMenuTriggerFor]="historicos">Contadores Historicos</button>
-        <button mat-menu-item (click)="logout()">Cerrar sesión</button>
-        </mat-menu>
 
-        <mat-menu #vertebrates="matMenu">
-        <button mat-menu-item routerLink="/euro/home/users" >Usuarios</button>
-        <button mat-menu-item >Contadores</button>
-        <button mat-menu-item >Valor mínimo de duración de señal por contador</button>
-        </mat-menu>
+        <div #conf_submenu class="container_slidebar-submenu" style="display:none">
+            <div class="container_slidebar-submenu--item" [routerLink]="['/euro/home/users']" >Usuarios</div>
+            <div class="container_slidebar-submenu--item">Contadores</div>
+            <div class="container_slidebar-submenu--item">Valor minimo de duracion de señal por contador</div>
+            <div class="container_slidebar-submenu--item">Duracion de inactividad para tiempo muerto</div>
+            <div class="container_slidebar-submenu--item">Frecuencia de actualizacion de base de datos</div>
+            <div class="container_slidebar-submenu--item">Hora de fin de turno</div>
+        </div>
 
-        <mat-menu #invertebrates="matMenu">
-        <button mat-menu-item routerLink="/euro/home/process">Proceso1</button>
-        <button mat-menu-item>Proceso2</button>
-        <button mat-menu-item>Proceso3</button>
-        <button mat-menu-item>Proceso4</button>
-        </mat-menu>
+        <button #contActual id ="contActual" (click)="active(contActual, contActual_submenu)" class="container_slidebar_menu container_slidebar--contActual">
+            <mat-icon>today</mat-icon>
+            <div>Contadores Actuales</div>
+        </button>
 
-        <mat-menu #historicos="matMenu">
-            <button mat-menu-item>Cambio de Producto</button>
-            <button mat-menu-item>Fin de Turno</button>
-        </mat-menu>
+        <div #contActual_submenu class="container_slidebar-submenu" style="display:none">
+            <div class="container_slidebar-submenu--item">Proceso 1</div>
+            <div class="container_slidebar-submenu--item">Proceso 2</div>
+        </div>
+        
+        
+        <button #contHistorico id ="contHistorico" (click)="active(contHistorico, contHistorico_submenu)" class="container_slidebar_menu container_slidebar--contHistorico">
+            <mat-icon>date_range</mat-icon>
+            <div>Contadores Históricos</div>
+        </button>
+
+        <div #contHistorico_submenu class="container_slidebar-submenu" style="display:none">
+            <div class="container_slidebar-submenu--item">Cambio de Producto</div>
+            <div class="container_slidebar-submenu--item">Fin de Turno</div>
+            <div class="container_slidebar-submenu--item">Hora x Hora</div>
+            <div class="container_slidebar-submenu--item">Minuto x Minuto</div>
+        </div>
+
+
     </div>
 </div>
+
+
