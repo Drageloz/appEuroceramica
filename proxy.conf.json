@@ -1,6 +1,7 @@
 {
     "/apiEuroceramica/api/*":{
         "target": "https://apieuro-v1.herokuapp.com",
+        "pathRewrite": {"^/apiEuroceramica/api/": ""} ,
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true
