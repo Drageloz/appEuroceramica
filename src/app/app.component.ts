@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Routes } from '@angular/router';
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',

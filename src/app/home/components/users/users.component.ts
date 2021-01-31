@@ -32,6 +32,7 @@ export class UsersComponent implements AfterViewInit {
     // Create 100 users
     await this.userService.users().then(result =>
         {
+          console.log(result);
           this.users = result;
         }
       );

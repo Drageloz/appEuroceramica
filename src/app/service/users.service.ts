@@ -9,7 +9,7 @@ import { User } from "../interface/user"
   providedIn: "root"
 })
 export class UsersService {
-  private apiUrl:string = "/apiEuroceramica/api";
+  private apiUrl:string = "https://apieuro-v1.herokuapp.com/apiEuroceramica/api";
   constructor(private http: HttpClient, private cookies: CookieService) {}
 
   async login(name:string): Promise<User>{
