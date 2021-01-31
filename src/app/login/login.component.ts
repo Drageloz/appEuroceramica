@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
   async login(){
     try{
     await this.userService.login(this.email).then(result =>
-      this.responsePassWord = result.us_password
+      this.responsePassWord = result.usPass
       );
 
       console.log(localStorage.getItem("sesion"));
