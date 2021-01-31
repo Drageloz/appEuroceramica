@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { UsersService } from "../service/users.service";
+import { ApiService } from "../service/api.service";
 import { Router } from "@angular/router";
 import { User } from "../interface/user"
 
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
   sessionActive!:string;
 
 
-  constructor(public userService: UsersService, public router: Router) {
+  constructor(public apiService: ApiService, public router: Router) {
   }
   
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
 
   async login(){
     try{
-    await this.userService.login(this.email).then(result =>
+    await this.apiService.login(this.email).then(result =>
       this.responsePassWord = result.usPass
       );
 
