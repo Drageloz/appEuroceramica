@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProcessComponent } from './components/process/process.component';
 import { CountersComponent } from './components/counters/counters.component';
+import { CountersExampleComponent } from './components/counters-example/counters-example.component';
+
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { CountersComponent } from './components/counters/counters.component';
     HomeComponent,
     UsersComponent,
     ProcessComponent,
-    CountersComponent
+    CountersComponent,
+    CountersExampleComponent
   ],
   imports: [
     CommonModule,

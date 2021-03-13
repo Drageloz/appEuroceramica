@@ -30,7 +30,6 @@ export class CountersComponent implements AfterViewInit {
   async dataTable(){
     await this.apiService.counters().then(result =>
         {
-          console.log(result);
           this.counters = result;
         }
       );

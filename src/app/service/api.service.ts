@@ -4,6 +4,7 @@ import { Observable } from "rxjs/Observable";
 import { CookieService } from "ngx-cookie-service";
 import { User } from "../interface/user"
 import { Counter } from "../interface/counter";
+import { CountersExample } from "../interface/counterExample";
 
 
 @Injectable({
@@ -23,6 +24,18 @@ export class ApiService {
 
   async counters(): Promise<Counter[]>{
     return await this.http.get<Counter[]>(this.apiUrl + "/Counters/" + "all").toPromise();
+  }
+
+  async countersExample(): Promise<Array<CountersExample>>{
+    return await this.http.get<Array<CountersExample>>(this.apiUrl + "/CountersExample/" + "all").toPromise();
+  }
+
+  async incrementCountersExample(): Promise<Array<CountersExample>>{
+    return await this.http.get<Array<CountersExample>>(this.apiUrl + "/CountersExample/" + "increment").toPromise();
+  }
+
+  async decrementCountersExample(): Promise<Array<CountersExample>>{
+    return await this.http.get<Array<CountersExample>>(this.apiUrl + "/CountersExample/" + "decrement").toPromise();
   }
   
 }

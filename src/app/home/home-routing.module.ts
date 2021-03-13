@@ -5,6 +5,7 @@ import { MenuComponent } from '../menu/menu.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProcessComponent } from './components/process/process.component';
 import { CountersComponent } from './components/counters/counters.component';
+import { CountersExampleComponent } from './components/counters-example/counters-example.component';
 
 const routes: Routes = [ 
     {
@@ -22,6 +23,10 @@ const routes: Routes = [
     {
       path: "counters",
       component: CountersComponent
+    },
+    {
+      path: "countersExample",
+      component: CountersExampleComponent
     }
   ];
   
