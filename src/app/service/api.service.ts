@@ -5,6 +5,7 @@ import { CookieService } from "ngx-cookie-service";
 import { User } from "../interface/user"
 import { Counter } from "../interface/counter";
 import { CountersExample } from "../interface/counterExample";
+import { Value } from "../interface/value";
 
 
 @Injectable({
@@ -12,8 +13,9 @@ import { CountersExample } from "../interface/counterExample";
 })
 export class ApiService {
   private apiUrl:string = "https://apieuro-v1.herokuapp.com/apiEuroceramica/api";
+  private apiNode:string = "https://jolly-skunk-59.loca.lt";
   constructor(private http: HttpClient, private cookies: CookieService) {}
-
+  
   async login(name:string): Promise<User>{
     return await this.http.get<User>(this.apiUrl + "/Users/" + name).toPromise();
   }
@@ -30,12 +32,12 @@ export class ApiService {
     return await this.http.get<Array<CountersExample>>(this.apiUrl + "/CountersExample/" + "all").toPromise();
   }
 
-  async incrementCountersExample(): Promise<Array<CountersExample>>{
-    return await this.http.get<Array<CountersExample>>(this.apiUrl + "/CountersExample/" + "increment").toPromise();
+  async incrementCountersExample(): Promise<Array<Value>>{
+    return await this.http.get<Array<Value>>(this.apiNode + "/increment?value=1").toPromise();
   }
 
-  async decrementCountersExample(): Promise<Array<CountersExample>>{
-    return await this.http.get<Array<CountersExample>>(this.apiUrl + "/CountersExample/" + "decrement").toPromise();
+  async decrementCountersExample(): Promise<Array<Value>>{
+    return await this.http.get<Array<Value>>(this.apiNode + "/reset?value=2").toPromise();
   }
   
 }

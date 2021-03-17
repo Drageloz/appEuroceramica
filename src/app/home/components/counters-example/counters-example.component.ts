@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountersExample } from 'src/app/interface/counterExample';
+import { Value } from 'src/app/interface/value';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class CountersExampleComponent implements OnInit{
 
   data!:Array<CountersExample>;
   number:any;
+  data2!:Array<Value>
 
   constructor(public apiService: ApiService) { 
     
@@ -35,7 +37,7 @@ export class CountersExampleComponent implements OnInit{
   async increment(){
     await this.apiService.incrementCountersExample().then(result =>
       {
-        this.data = result;
+        this.data2 = result;
         this.number = this.data[0].ceValue;
       }
 
@@ -45,7 +47,7 @@ export class CountersExampleComponent implements OnInit{
   async decrement(){
     await this.apiService.decrementCountersExample().then(result =>
       {
-        this.data = result;
+        this.data2 = result;
         this.number = this.data[0].ceValue;
       }
 
